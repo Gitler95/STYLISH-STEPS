@@ -167,17 +167,13 @@ button {
   }
 
   .greenButton {
-    width: 100%;
-    height: 55px;
-    background: #9dd558;
-    border-radius: 18px;
-    border: 0;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background 0.1s ease-in-out;
+
     position: relative;
+   
+    &:disabled{
+animation: button-loading 0.2s ease-in-out
+
+    }
     &:hover {
       img {
         transform: translateX(5px);
@@ -242,3 +238,14 @@ button {
     }
   }
 }
+ @keyframes button-loading{
+  0%{
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100%{
+    opacity: 1;
+  }
+ }
